@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap" rel="stylesheet">
+<style>
+    .card {
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.containerl {
+  padding: 2px 16px;
+}
+
+table{
+    width:100%;
+
+}
+tr{
+    height:35px;
+}
+
+th{
+    font-family: 'Poppins', sans-serif;
+}
+
+td{
+    font-family: 'Poppins', sans-serif;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+<div class="card">
+    <br/>
+    <br/>
+  <h1 style="text-align:center;font-size:35px;">My Records</h1>
+  <br/>
+  <div class="containerl">
+    <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Lend Id</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Book Name</th>
+
+                    <th scope="col">FineAmount</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    
+                    <td>@item.LendId</td>
+                    <td>@item.User.UserName</td>
+                    <td>@item.Book.BookTitle</td>
+                    <td>@item.FineAmount</td>
+                    <td>@item.LendStatus</td>
+                    
+                    </tr>
+                }
+            </tbody>
+            </table>
+  </div>
+</div>

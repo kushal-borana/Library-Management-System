@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<LMSS.Models.LendRequest>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .card {
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.containerl {
+  padding: 2px 16px;
+}
+
+table{
+    width:100%;
+
+}
+tr{
+    height:40px;
+}
+
+th{
+    font-family: 'Poppins', sans-serif;
+}
+
+td{
+    font-family: 'Poppins', sans-serif;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+
+<div class="card">
+   <br/>
+    <br/>
+  <h1 style="text-align:center;font-size:35px;"> Request List</h1>
+  <div class="containerl">
+    <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Lend Id</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Book Name</th>
+
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                
+                    @if(@item.LendStatus == "Requested"){
+                        <tr>
+                    <td> @item.LendId</td>
+                    <td>@item.User.UserName</td>
+                    <td>@item.Book.BookTitle</td>
+                    <td><form  class="btn btn-success" asp-controller="LendRequests" asp-action="RequestApproval" asp-route-lendId=@item.LendId asp-route-bookId=@item.BookId>
+                         <input type="submit" value="Approve"/>
+                    </form><form  class="btn btn-success" asp-controller="LendRequests" asp-action="RequestDecline" asp-route-lendId=@item.LendId>
+                         <input type="submit" value="Decline"/>
+                    </form>
+                        </td>
+                        </tr>
+                    }
+                    
+                }
+            </tbody>
+            </table>
+  </div>
+</div>

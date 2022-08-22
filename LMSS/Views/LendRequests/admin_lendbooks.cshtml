@@ -1,0 +1,72 @@
+﻿
+@model IEnumerable<LMSS.Models.LendRequest>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .card {
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.containerl {
+  padding: 2px 16px;
+}
+table{
+    width:100%;
+
+}
+tr{
+    height:40px;
+}
+
+th{
+    font-family: 'Poppins', sans-serif;
+}
+
+td{
+    font-family: 'Poppins', sans-serif;
+}
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<div class="card">
+  
+  <div class="containerl">
+    <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Lend Id</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Lend Date</th>
+                    <th scope="col">Due Date</th>
+                   
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    
+                    <td>@item.LendId</td>
+                    <td>@item.User.UserName</td>
+                    <td>@item.Book.BookTitle</td>
+                    <td>@item.LendDate</td>
+                    <td>@item.ReturnDate</td>
+                    
+                    <td>@item.LendStatus</td>
+                    
+                    </tr>
+                }
+            </tbody>
+            </table>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+
+ *{
+  margin: 0;
+  padding: 0;
+}
+
+.clear{
+  clear: both;
+}
+
+
+.slide-toggle{
+  display: none;
+}
+
+.slidemenu{
+  font-family: arial, sans-serif;
+  width: 100%;
+  margin: 15px auto;
+  overflow: hidden;
+}
+
+.slidemenu label{
+  width: 12.5%;
+  text-align: center;
+  display: block;
+  float: left;
+  color: #333;
+  
+}
+
+.slidemenu label:hover{
+  cursor: pointer;
+  color: red
+}
+
+.slidemenu label span{
+  display: block;
+  padding: 10px;
+  color: rgb(10,86,218);
+}
+
+
+
+
+
+</style>
+
+        <nav class="slidemenu">
+  
+  <!-- Item 1 -->
+  <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle" checked/>
+  <label for="slide-item-1"><a asp-controller="Books" asp-action="Index"><span>Book Inventory</span></a></label>
+  
+  <!-- Item 2 -->
+  <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+  <label for="slide-item-2"><a asp-controller="Authors" asp-action="Index"><span>Authors</span></a></label>
+  
+  <!-- Item 3 -->
+  <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
+  <label for="slide-item-3"><a  asp-controller="Publishers" asp-action="Index"><span>Publishers</span></a></label>
+  
+  <!-- Item 4 -->
+  <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
+  <label for="slide-item-4"><a  asp-controller="Accounts" asp-action="Index"><span>Users</span></a></label>
+
+  <!-- Item 5 -->
+  <input type="radio" name="slideItem" id="slide-item-5" class="slide-toggle"/>
+  <label for="slide-item-5"><a  asp-controller="LendRequests" asp-action="AdminPage"><span>Request List</span></a></label>
+  
+  <!-- Item 6 -->
+  <input type="radio" name="slideItem" id="slide-item-6" class="slide-toggle"/>
+  <label for="slide-item-6"><a  asp-controller="LendRequests" asp-action="admin_lendbooks"><span>LentBooks</span></a></label>
+
+   <!-- Item 7 -->
+  <input type="radio" name="slideItem" id="slide-item-7" class="slide-toggle"/>
+  <label for="slide-item-7">          <a  asp-controller="LendRequests" asp-action="admin_lendreturnhist"><span>Lend/Return History</span></a></label>
+
+  
+  <!-- Item 8-->
+  <input type="radio" name="slideItem" id="slide-item-8" class="slide-toggle"/>
+  <label for="slide-item-8"><a asp-controller="Accounts" asp-action="Login"><span>Logout</span></a></label>
+
+
+  
+  <div class="clear"></div>
+  
+  <!-- Bar -->
+  <div class="slider">
+    <div class="bar"></div>
+  </div>
+  
+</nav>
+          <div class="container">
+              @RenderBody();
+
+          </div>
+
+      
+
+
+                    
+                       

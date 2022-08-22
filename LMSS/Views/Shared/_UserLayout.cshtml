@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+ <link rel="stylesheet" href="/css/BookView.css" />
+
+<div class="nav">
+        <div class="left">
+      <img class="logo" src="/images/lms.jpg" />
+      <h2>LMSS</h2>
+     </div>
+      <div class="right">
+        <input type="radio" name="radio2" value="3" id="tab-1" checked/>
+        <label for="tab-1" class= "nav__1">
+          <a asp-controller="LendRequests" asp-action="UserIssuedBooks">Issued Books</a></label>
+        
+        <input type="radio" name="radio2" value="4" id="tab-2" />
+        <label for="tab-2" class= "nav__2">
+          <a asp-controller="Books" asp-action="BookView"> View Books</a></label>
+        
+        <input type="radio" name="radio2" value="5" id="tab-3" />
+        <label for="tab-3" class= "nav__3">
+          <a asp-controller="LendRequests" asp-action="UserRecords"> Records</a></label>
+
+         <input type="radio" name="radio2" value="6" id="tab-4" />
+        <label for="tab-4" class= "nav__4">
+          <a asp-controller="Accounts" asp-action="Login"> Logout</a></label>
+        </div>
+        
+        
+      </div>
+      <div class="container">
+          @RenderBody();
+
+      </div>

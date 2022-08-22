@@ -1,0 +1,112 @@
+﻿
+
+@model IEnumerable<LMSS.Models.Book>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .card {
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.containerl {
+  padding: 2px 16px;
+}
+table{
+    width:100%;
+
+}
+tr{
+    height:40px;
+}
+
+th{
+    font-family: 'Poppins', sans-serif;
+}
+
+td{
+    font-family: 'Poppins', sans-serif;
+}
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<div class="card">
+    <h1>Publisher List</h1>
+   <a asp-action="Create">Create New</a>
+  <div class="containerl">
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.NoOfCopies)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.IssuedBooks)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.IsAvailable)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Publisher)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfCopies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedBooks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.AuthorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher.PublisherId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+              
+  </div>
+</div>

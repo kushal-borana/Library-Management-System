@@ -1,0 +1,210 @@
+﻿@model IEnumerable<LMSS.Models.Account>
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "";
+}
+<style>
+    body {
+  background: #f2f2f2;
+}
+.animate {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.text-center {
+  text-align: center;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/* close commented backslash hack */
+a {
+  color: #000000;
+}
+a:hover,
+a:focus {
+  color: #ff0000;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.text-primary {
+  color: #ffffff;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+button {
+  cursor: pointer;
+  background: rgb(10, 86, 218);
+  width: 100%;
+  border: 0;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 20px;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.input-group label {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  font-size: 16px;
+  color: #cdcdcd;
+  font-weight: normal;
+  padding: 2px 5px;
+  z-index: 5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.input-group input {
+  outline: none;
+  display: block;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  z-index: 3;
+  border: 1px solid #d9d9d9;
+  padding: 10px 10px;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-weight: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.input-group.focused label {
+  background: #fff;
+  font-size: 12px;
+  top: -8px;
+  left: 5px;
+  color: #000000;
+}
+.input-group span.validate-tooltip {
+  margin-top: 0;
+}
+.wrapper {
+  width: 350px;
+  background: #fff;
+  margin: 20px auto;
+  min-height: 200px;
+  border: 1px solid rgb(10, 86, 218);
+  border-radius: 20px;
+  
+  margin-top: 65px;
+
+}
+.wrapper .inner-warpper {
+  padding: 50px 30px 60px;
+  box-shadow: 1px 1.732px 10px 0px rgba(0, 0, 0, 0.063);
+}
+.wrapper .title {
+  margin-top: 0;
+}
+.wrapper .supporter {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #761818;
+  cursor: pointer;
+}
+.wrapper .remember-me {
+  cursor: pointer;
+}
+.wrapper input[type="checkbox"] {
+  float: left;
+  margin-right: 5px;
+  margin-top: 2px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+.wrapper label[for="rememberMe"] {
+  cursor: pointer;
+  color: rgb(10,86,218);
+}
+.wrapper .signup-wrapper {
+  padding: 10px;
+  margin-top: -40px;
+  font-size: 14px;
+  background: rgb(10, 86, 218);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+.wrapper .signup-wrapper a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.wrapper .signup-wrapper a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+</style>
+</style>
+
+
+
+  <div class="wrapper">
+  <div class="inner-warpper text-center">
+    <div> 
+        <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" height="100px" width="100px">
+    </div>
+    <h2 class="title">Login to LMS</h2>
+    <form action="#" id="formvalidate">
+      <div class="input-group">
+        <input class="form-control" name="userName" id="userName" type="text" placeholder="User Name" />
+      </div>
+      <div class="input-group">
+        <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="Password" />
+      </div>
+
+      <button type="submit" id="login">Login</button>
+    
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<style>
+    .Homecontainer{
+        display: flex;
+        flex-direction: column;
+    }
+    h2,h4{
+        text-align: center;
+    }
+    .Homecontent{
+    display:flex;
+    }
+    .digitalinventory ,.digitaldata,.bookonline{
+        flex:1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+
+</style>
+
+
+
+<div class="Homecontainer">
+    <div><img width="100%" src="~/imgs/home-bg.jpg" /></div>
+    <div><h2>Our Features</h2><h4>Our 3 primary features</h4></div>
+    <div class="Homecontent">
+        <div class="digitalinventory">
+            <img width="50%" src="~/imgs/digital-inventory.png"/>
+            <h5>Digital Book Inventory</h5>
+            <p>Enables librarian to upload % share unlimited e-content and offers access to students in order to drive hassle-free teacher-student collaboration </p>
+        </div>
+        <div class="digitaldata">
+            <img width="50%" src="~/imgs/digital-data.png"/>
+            <h5>Cataloguing</h5>
+            <p>The cataloguing module of the library management system enables the librarian to create books, journals, and other resources entries and create a database of the same for easy book search.</p>
+        </div>
+        <div class="bookonline">
+            <img width="50%" src="~/imgs/book-online.png"/>
+            <h5>User Friendly</h5>
+            <p>The simple, intuitive, and easy to navigate LMS platform has a web based application that enables librarian &Aacute; students to operate it with ease on mobile devices at any time.</p></div>
+    </div>
+</div>
