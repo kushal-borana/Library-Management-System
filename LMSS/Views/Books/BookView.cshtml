@@ -36,8 +36,8 @@
 <div class="container">
   <div class="search">
      <form style="display:flex;justify-content:center;">
-    <input type="text" name="searchstring" class="search__input" placeholder="Search..."/>
-    <input type="submit"/>
+    <input type="text" name="searchstring" class="search__input" style="width:800px;margin-right:100px" placeholder="Search..."/>
+    <input type="submit" style="margin-left:20px"/>
 </form>
   </div>
     <br/>
@@ -48,7 +48,7 @@
     <div class="area-box">
         @foreach (var item in Model) {
         <div class="box1">
-            <img src="@item.ImageUrl" alt="">
+            <img style="height200px;width:200px;padding-top:10px;border:3px solid white" src="@item.ImageUrl" alt="">
             <br/>
             <br/>
              <h1>@item.BookTitle</h1><br/>
